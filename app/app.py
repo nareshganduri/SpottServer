@@ -4,7 +4,7 @@ from flask import render_template
 from flask import request
 app = Flask(__name__)
 
-UPLOAD_FOLDER = os.path.abspath('./static/img')
+UPLOAD_FOLDER = os.path.abspath('./app/static/img')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def get_date(filename):
@@ -24,7 +24,7 @@ def get_location(filename):
 
 @app.route('/')
 def list_images():
-    imgs_dir = 'static/img'
+    imgs_dir = 'app/static/img'
     img_files = [f for f in os.listdir(imgs_dir) if os.path.isfile(os.path.join(imgs_dir, f))]
     img_files.remove('.gitignore')
     images = []
@@ -83,7 +83,7 @@ def download_image():
     if request.method == 'POST':
         req_location = request.form['location']
 
-        imgs_dir = 'static/img'
+        imgs_dir = 'app/static/img'
         img_files = [f for f in os.listdir(imgs_dir) if os.path.isfile(os.path.join(imgs_dir, f))]
         img_files.remove('.gitignore')
         images = []
