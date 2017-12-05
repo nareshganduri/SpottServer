@@ -3,3 +3,10 @@
 # Except this file and some demo images to ensure there's stuff
 # in the database when the app is redeployed to Heroku
 !.gitignore
+!JPEG_20171205_101241_.jpg
+!JPEG_20171205_101256_.jpg
+!JPEG_20171205_101308_.jpg
+!JPEG_20171205_101320_.jpg
+!JPEG_20171205_101334_.jpg
+!JPEG_20171205_101358_.jpg
+!JPEG_20171205_101409_.jpg
