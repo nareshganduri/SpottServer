@@ -1,6 +1,5 @@
 /*
-!/static/img
-/static/img/*
+!/static
 !/templates
 !app.py
 !.gitignore
