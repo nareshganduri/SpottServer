@@ -20,8 +20,7 @@ def get_location(filename):
 
     # get location from metadata
     exif_dict = piexif.load(filename)
-    location = int(exif_dict['Exif'][piexif.ExifIFD.UserComment])
-    return ['Left', 'Center', 'Right'][location] + ' Side'
+    return int(exif_dict['Exif'][piexif.ExifIFD.UserComment])
 
 @app.route('/')
 def list_images():
@@ -35,7 +34,7 @@ def list_images():
         image['date'] = get_date(f)
 
         full_path = os.path.join(app.config['UPLOAD_FOLDER'], f)
-        image['location'] = get_location(full_path)
+        image['location'] = ['Left', 'Center', 'Right'][get_location(full_path)] + ' Side'
         images.append(image)
     return render_template('index.html',
                            images=images)
@@ -94,9 +93,9 @@ def download_image():
             with open(full_path, 'rb') as img_data:
                 raw_bytes = img_data.read()
                 image['data'] = raw_bytes.encode('base64')
-            location = get_location(full_path)
+            location = str(get_location(full_path))
 
-            if location == req_location:
+            if location == req_location or req_location == "3":
                 images.append(image)
 
         from flask import jsonify

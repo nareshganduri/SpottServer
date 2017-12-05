@@ -7,12 +7,14 @@
 <h2>Download Image Test</h2>
 <form action='/download' method="post">
     <p>Please select which location the photos should be pulled from.</p>
-    <input type="radio" id="loc1" name="location" value="Left Side">
+    <input type="radio" id="loc1" name="location" value="0">
     <label for="loc1">Left Side</label>
-    <input type="radio" id="loc2" name="location" value="Center Side">
+    <input type="radio" id="loc2" name="location" value="1">
     <label for="loc2">Center Side</label>
-    <input type="radio" id="loc3" name="location" value="Right Side">
+    <input type="radio" id="loc3" name="location" value="2">
     <label for="loc3">Right Side</label>
+    <input type="radio" id="loc4" name="location" value="3">
+    <label for="loc4">All Sides</label>
     <br/>
     <input type="submit" value="Download!"/>
 </form>
