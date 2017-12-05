@@ -30,3 +30,5 @@ More specifically, the result will look like this:
 Each image returned has two parameters:
 * data - The image binary data itself, encoded as a base64 string
 * date - An ASCII string representing the time the picture was uploaded to the server
+
+The server is up now. Try it out at http://spott-server.herokuapp.com/
