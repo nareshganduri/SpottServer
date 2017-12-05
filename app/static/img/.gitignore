@@ -1,4 +1,5 @@
 # Ignore everything in this directory
 *
-# Except this file
+# Except this file and some demo images to ensure there's stuff
+# in the database when the app is redeployed to Heroku
 !.gitignore
