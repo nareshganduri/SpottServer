@@ -26,6 +26,7 @@ def get_location(filename):
 def list_images():
     imgs_dir = 'static/img'
     img_files = [f for f in os.listdir(imgs_dir) if os.path.isfile(os.path.join(imgs_dir, f))]
+    img_files.remove('.gitignore')
     images = []
     for f in img_files:
         image = {}
