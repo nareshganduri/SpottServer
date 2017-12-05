@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spott - Image Upload Test</title>
+</head>
+<body onload="get_timestamp()">
+    <script>
+        function get_timestamp() {
+            function pad2(num) {
+                if (num > 10)
+                    return '' + num;
+                else
+                    return '0' + num;
+            }
+            var date_obj = new Date();
+            var date_input = document.getElementById('img_date');
+            date_input.value = 'JPEG_' + date_obj.getFullYear() +
+                                + pad2(date_obj.getMonth()+1)
+                                + pad2(date_obj.getDate())
+                                + '_'
+                                + pad2(date_obj.getHours())
+                                + pad2(date_obj.getMinutes())
+                                + pad2(date_obj.getSeconds())
+                                + '_.jpg';
+        }
+    </script>
+<h2>Upload Image Test</h2>
+<form action='/upload' method="post" enctype="multipart/form-data">
+    <input type="hidden" id="img_date" name="date"/>
+    <input type="file" name="src"/>
+    <p>Please select where this photo was taken.</p>
+    <input type="radio" id="loc1" name="location" value="0">
+    <label for="loc1">Left Side</label>
+    <input type="radio" id="loc2" name="location" value="1">
+    <label for="loc2">Center Side</label>
+    <input type="radio" id="loc3" name="location" value="2">
+    <label for="loc3">Right Side</label>
+    <br/>
+    <input type="submit" value="Upload!"/>
+</form>
+</body>
+</html>

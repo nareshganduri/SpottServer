@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spott - All Images</title>
+</head>
+<body>
+<h2>All Images Currently Uploaded</h2>
+{% for image in images %}
+    <div>
+        <h3>{{image.title}}</h3>
+        <img src="{{image.src}}"/>
+        <p>Date: {{image.date}}</p>
+        <p>Location: {{image.location}}</p>
+    </div>
+{% endfor %}
+</body>
+</html>
